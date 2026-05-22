@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "outsideinside-bim"
+version = "0.1.0"
+description = "Architectural-rule-dominated BIM reconstruction from fused textured 3D meshes and 2D footprint shapefiles."
+requires-python = ">=3.10"
+dependencies = [
+  "cadquery>=2.4",
+  "geopandas>=0.14",
+  "numpy>=1.24",
+  "open3d>=0.18",
+  "pillow>=10",
+  "pyproj>=3.6",
+  "pyvista>=0.43",
+  "scipy>=1.11",
+  "shapely>=2.0",
+  "torch>=2.1",
+  "transformers>=4.44",
+  "ultralytics>=8.2",
+]
+
+[project.scripts]
+outsideinside-bim = "outsideinside_bim.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["outsideinside_bim*"]
